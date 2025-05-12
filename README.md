@@ -1,12 +1,11 @@
-- 👋 Hi, I’m @leducvu192005
-- 👀 I’m interested in ...
-- 🌱 I’m currently learning ...
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
-
-<!---
-leducvu192005/leducvu192005 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+1. Lập kế hoạch và chuẩn bị môi trường
+2. Thiết kế giao diện người dùng (UI/UX)
+Xác định bố cục ứng dụng.
+3. Kết nối với Spotify API
+Đăng ký ứng dụng trên Spotify Developer.
+4. Phát triển các tính năng chính
+Đăng nhập/Đăng ký người dùng.
+5. Kiểm thử và tối ưu hóa
+Kiểm thử các tính năng.
+6. Triển khai và duy trì
+Triển khai ứng dụng.
