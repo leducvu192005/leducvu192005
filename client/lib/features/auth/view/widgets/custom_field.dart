@@ -22,13 +22,6 @@ class CustomField extends StatelessWidget {
       readOnly: readOnly,
       controller: controller,
       decoration: InputDecoration(hintText: hintText),
-      validator: (val) {
-        if (val!.trim().isEmpty) {
-          return "$hintText is missing!";
-        }
-        return null;
-      },
-      obscureText: isObscureText,
     );
   }
 }
