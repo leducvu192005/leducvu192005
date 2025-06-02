@@ -15,7 +15,7 @@ class _SignupPageState extends State<SignupPage> {
       body: Column(
         children: [
           const Text(
-            'Sign up.',
+            'Đăng nhập.',
             style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
           ),
         ],
