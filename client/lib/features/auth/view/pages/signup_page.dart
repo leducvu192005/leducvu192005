@@ -3,6 +3,7 @@ import 'package:client/features/auth/repositories/auth_remote_repository.dart';
 import 'package:client/features/auth/view/widgets/auth_gradient_button.dart';
 import 'package:client/features/auth/view/widgets/custom_field.dart';
 import 'package:flutter/material.dart';
+import 'package:client/features/auth/view/pages/login_page.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
@@ -44,14 +45,14 @@ class _SignupPageState extends State<SignupPage> {
               CustomField(
                 hintText: 'Name',
                 controller: nameController,
-                isObscureText: true,
+                isObscureText: false,
               ),
 
               const SizedBox(height: 15),
               CustomField(
                 hintText: 'Email',
                 controller: emailController,
-                isObscureText: true,
+                isObscureText: false,
               ),
               const SizedBox(height: 15),
               CustomField(
@@ -70,19 +71,27 @@ class _SignupPageState extends State<SignupPage> {
                   );
                 },
               ),
-              RichText(
-                text: TextSpan(
-                  text: 'Already have an account?',
-                  style: Theme.of(context).textTheme.titleMedium,
-                  children: const [
-                    TextSpan(
-                      text: 'Sign In',
-                      style: TextStyle(
-                        color: Pallete.gradient2,
-                        fontWeight: FontWeight.bold,
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const LoginPage()),
+                  );
+                },
+                child: RichText(
+                  text: TextSpan(
+                    text: 'Already have an account?',
+                    style: Theme.of(context).textTheme.titleMedium,
+                    children: const [
+                      TextSpan(
+                        text: 'Sign In',
+                        style: TextStyle(
+                          color: Pallete.gradient2,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ],

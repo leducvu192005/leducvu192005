@@ -4,11 +4,13 @@ class CustomField extends StatelessWidget {
   final String hintText;
   final TextEditingController controller;
   final bool isObscureText;
+  final TextInputType? keyboardType;
   const CustomField({
     super.key,
     required this.hintText,
     required this.controller,
     this.isObscureText = false,
+    this.keyboardType,
   });
 
   @override
@@ -23,7 +25,7 @@ class CustomField extends StatelessWidget {
         return null;
       },
       obscureText: isObscureText,
-      obscuringCharacter: '0',
+      keyboardType: keyboardType,
     );
   }
 }
