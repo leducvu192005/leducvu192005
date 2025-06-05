@@ -36,6 +36,13 @@ dependencies:
   cupertino_icons: ^1.0.8
   http: ^1.4.0
   fpdart: ^2.0.0-dev.3
+  riverpod_annotation: ^2.6.1
+  dev: ^1.0.0
+  riverpod_generator: ^2.6.5
+  build_runner: ^2.4.15
+  custom_lint: ^0.7.5
+  riverpod_lint: ^2.6.5
+  flutter_riverpod: ^2.6.1
 
 dev_dependencies:
   flutter_test:
