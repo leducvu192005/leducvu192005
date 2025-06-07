@@ -1,4 +1,4 @@
-## BÁO CÁO ĐỒ ÁN CUỐI KỲ
+## BÁO CÁO DỰ ÁN SPOTIFY CLONECLONE
 Đề tài: Xây dựng ứng dụng nghe nhạc Spotify Clone.
 
     -Thành viên 1 :
@@ -16,6 +16,7 @@
 I. Mục tiêu và lý do chọn đề tài.
 
     -Ngày nay, các nền tảng phát nhạc trực tuyến đóng vai trò quan trọng trong đời sống giải trí số, trong đó nổi bật là Spotify. Việc xây dựng một ứng dụng Spotify Clone giúp em vừa tiếp cận thực tế về kiến trúc và tính năng của các hệ thống hiện đại, vừa rèn luyện kỹ năng lập trình từ frontend (giao diện người dùng) đến backend (API, xử lý dữ liệu).
+
 
 Mục tiêu đề tài:
 
