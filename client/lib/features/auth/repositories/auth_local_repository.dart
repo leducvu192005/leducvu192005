@@ -4,6 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 part 'auth_local_repository.g.dart';
 
 @Riverpod(keepAlive: true)
+// ignore: deprecated_member_use_from_same_package
 AuthLocalRepository authLocalRepository(AuthLocalRepositoryRef ref) {
   return AuthLocalRepository();
 }

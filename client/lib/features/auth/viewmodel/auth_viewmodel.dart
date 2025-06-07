@@ -6,7 +6,7 @@ import 'package:fpdart/fpdart.dart';
 part 'auth_viewmodel.g.dart';
 
 @riverpod
-class AuthViewModel extends _$AuthViewModel {
+class AuthViewModel extends AutoDisposeNotifier<AsyncValue<UserModel>> {
   late AuthRemoteRepository _authRemoteRepository;
   late AuthLocalRepository _authLocalRepository;
   @override
@@ -48,14 +48,12 @@ class AuthViewModel extends _$AuthViewModel {
       password: password,
     );
 
+    // ignore: unused_local_variable
     final val = switch (res) {
       Left(value: final l) => state =
           AsyncValue.error(l.message, StackTrace.current),
       Right(value: final r) => state = _loginSuccess(r),
     };
-
-    // ignore: avoid_print
-    print(val);
   }
 
   AsyncValue<UserModel> _loginSuccess(UserModel user) {

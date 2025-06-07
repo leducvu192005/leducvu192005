@@ -9,12 +9,12 @@ import 'package:fpdart/fpdart.dart';
 import 'package:http/http.dart' as http;
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-// ignore: prefer_typing_uninitialized_variables
-
 part 'auth_remote_repository.g.dart';
 
 @riverpod
-AuthRemoteRepository authRemoteRepository(AuthRemoteRepositoryRef ref) {
+AuthRemoteRepository authRemoteRepository(
+    // ignore: deprecated_member_use
+    AutoDisposeProviderRef<AuthRemoteRepository> ref) {
   return AuthRemoteRepository();
 }
 
