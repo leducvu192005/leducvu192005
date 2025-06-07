@@ -9,20 +9,16 @@ import 'package:fpdart/fpdart.dart';
 import 'package:http/http.dart' as http;
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-<<<<<<< HEAD
-=======
+// ignore: prefer_typing_uninitialized_variables
+
 part 'auth_remote_repository.g.dart';
 
->>>>>>> 9d67ce7879a8403be177255c4a9e2f8e49e29ba7
 @riverpod
 AuthRemoteRepository authRemoteRepository(AuthRemoteRepositoryRef ref) {
   return AuthRemoteRepository();
 }
-<<<<<<< HEAD
 
 class AuthRemoteRepositoryRef {}
-=======
->>>>>>> 9d67ce7879a8403be177255c4a9e2f8e49e29ba7
 
 class AuthRemoteRepository {
   Future<Either<AppFailure, UserModel>> signup({

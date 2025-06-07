@@ -1,14 +1,11 @@
 import 'package:client/core/theme/app_pallete.dart';
-// ignore: unused_import
 import 'package:client/core/utils.dart';
 import 'package:client/core/widgets/loader.dart';
-import 'package:client/features/auth/view/viewmodel/auth_viewmodel.dart'
-    show authViewModelProvider;
+import 'package:client/features/auth/view/pages/login_page.dart';
 import 'package:client/features/auth/view/widgets/auth_gradient_button.dart';
 import 'package:client/features/auth/view/widgets/custom_field.dart';
 import 'package:client/features/auth/viewmodel/auth_viewmodel.dart';
 import 'package:flutter/material.dart';
-import 'package:client/features/auth/view/pages/login_page.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class SignupPage extends ConsumerStatefulWidget {
@@ -34,123 +31,114 @@ class _SignupPageState extends ConsumerState<SignupPage> {
 
   @override
   Widget build(BuildContext context) {
+    final isLoading =
+        ref.watch(authViewModelProvider.select((val) => val.isLoading == true));
+
     ref.listen(
       authViewModelProvider,
-      (prev, next) {
-        next?.when(
+      (_, next) {
+        next.when(
           data: (data) {
-            showSnackBar(context, 'Account created successfully');
+            showSnackBar(
+              context,
+              'Account created successfully! Please  login.',
+            );
             Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const LoginPage(),
-                ));
-          },
-          error: (error, st) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text(error.toString())),
+              context,
+              MaterialPageRoute(
+                builder: (context) => const LoginPage(),
+              ),
             );
           },
-          loading: () {
-            return const Loader();
+          error: (error, st) {
+            showSnackBar(context, error.toString());
           },
+          loading: () {},
         );
       },
     );
+
     return Scaffold(
       appBar: AppBar(),
-      body: Padding(
-        padding: const EdgeInsets.all(15.0),
-        child: Form(
-          key: formKey,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text(
-                'Sign  Up.',
-                style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 30),
-              CustomField(
-                hintText: 'Name',
-                controller: nameController,
-                isObscureText: false,
-              ),
-              const SizedBox(height: 15),
-              CustomField(
-                hintText: 'Email',
-                controller: emailController,
-                isObscureText: false,
-              ),
-              const SizedBox(height: 15),
-              CustomField(
-                hintText: 'Passworld',
-                controller: passwordController,
-                isObscureText: true,
-              ),
-              const SizedBox(height: 20),
-<<<<<<< HEAD
-              Consumer(
-                builder: (context, ref, _) => AuthGradientButton(
-                  buttonText: 'Sign Up',
-                  onTap: () async {
-                    if (formKey.currentState!.validate()) {
-                      await ref.read(authViewModelProvider.notifier).signUpUser(
-                            name: nameController.text,
-                            email: emailController.text,
-                            password: passwordController.text,
-                          );
-                    }
-                  },
-                ),
-=======
-              AuthGradientButton(
-                buttonText: 'Sign Up',
-                onTap: () async {
-                  if (formKey.currentState!.validate()) {
-                    await ref
-                        .read(authViewModelProvider.notifier)
-                        .signUpUser(
-                          name: nameController.text,
-                          email: emailController.text,
-                          password: passwordController.text,
-                        );
-                  }
-
-                  // ignore: avoid_print
-                },
->>>>>>> 9d67ce7879a8403be177255c4a9e2f8e49e29ba7
-              ),
-              const SizedBox(height: 20),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const LoginPage(),
+      body: isLoading
+          ? const Loader()
+          : Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Form(
+                key: formKey,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      'Sign Up.',
+                      style: TextStyle(
+                        fontSize: 50,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  );
-                },
-                child: RichText(
-                  text: TextSpan(
-                    text: 'Already have an account?',
-                    style: Theme.of(context).textTheme.titleMedium,
-                    children: const [
-                      TextSpan(
-                        text: 'Sign In',
-                        style: TextStyle(
-                          color: Pallete.gradient2,
-                          fontWeight: FontWeight.bold,
+                    const SizedBox(height: 30),
+                    CustomField(
+                      hintText: 'Name',
+                      controller: nameController,
+                    ),
+                    const SizedBox(height: 15),
+                    CustomField(
+                      hintText: 'Email',
+                      controller: emailController,
+                    ),
+                    const SizedBox(height: 15),
+                    CustomField(
+                      hintText: 'Password',
+                      controller: passwordController,
+                      isObscureText: true,
+                    ),
+                    const SizedBox(height: 20),
+                    AuthGradientButton(
+                      buttonText: 'Sign up',
+                      onTap: () async {
+                        if (formKey.currentState!.validate()) {
+                          await ref
+                              .read(authViewModelProvider.notifier)
+                              .signUpUser(
+                                name: nameController.text,
+                                email: emailController.text,
+                                password: passwordController.text,
+                              );
+                        } else {
+                          showSnackBar(context, 'Missing fields!');
+                        }
+                      },
+                    ),
+                    const SizedBox(height: 20),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const LoginPage(),
+                          ),
+                        );
+                      },
+                      child: RichText(
+                        text: TextSpan(
+                          text: 'Already have an account? ',
+                          style: Theme.of(context).textTheme.titleMedium,
+                          children: const [
+                            TextSpan(
+                              text: 'Sign In',
+                              style: TextStyle(
+                                color: Pallete.gradient2,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                    ],
-                  ),
+                    )
+                  ],
                 ),
               ),
-            ],
-          ),
-        ),
-      ),
+            ),
     );
   }
 }

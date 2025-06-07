@@ -5,7 +5,7 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.0.0 <4.0.0' # Đã sửa phiên bản SDK để tương thích rộng hơn, bạn có thể điều chỉnh lại nếu cần
+  sdk: '>=3.0.0 <4.0.0'
 
 dependencies:
   flutter:
@@ -13,16 +13,11 @@ dependencies:
   cupertino_icons: ^1.0.8
   http: ^1.4.0
   fpdart: ^2.0.0-dev.3
-<<<<<<< HEAD
   flutter_riverpod: ^2.6.1
-  riverpod_annotation: ^2.6.1
-  # dev: ^1.0.0 # Đã loại bỏ dòng này vì nó không phải là một gói hợp lệ hoặc cần thiết
-=======
   riverpod_annotation: ^2.6.1
   custom_lint: ^0.7.5
   riverpod_lint: ^2.6.5
-  flutter_riverpod: ^2.6.1
->>>>>>> 9d67ce7879a8403be177255c4a9e2f8e49e29ba7
+  shared_preferences: ^2.5.3
 
 dev_dependencies:
   dev: ^1.0.0
@@ -31,14 +26,6 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
-<<<<<<< HEAD
-  riverpod_generator: ^2.6.5 # Đã di chuyển và thụt lề đúng cách
-  build_runner: ^2.4.15     # Đã di chuyển và thụt lề đúng cách
-  custom_lint: ^0.7.5       # Đã di chuyển và thụt lề đúng cách
-  riverpod_lint: ^2.6.5     # Đã di chuyển và thụt lề đúng cách
-=======
-  shared_preferences: ^2.5.3
->>>>>>> 9d67ce7879a8403be177255c4a9e2f8e49e29ba7
 
 flutter:
   uses-material-design: true
