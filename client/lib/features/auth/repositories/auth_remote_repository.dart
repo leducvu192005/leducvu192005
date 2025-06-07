@@ -7,6 +7,22 @@ import 'package:client/core/failure/failure.dart';
 import 'package:client/models/user_model.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:http/http.dart' as http;
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+
+<<<<<<< HEAD
+=======
+part 'auth_remote_repository.g.dart';
+
+>>>>>>> 9d67ce7879a8403be177255c4a9e2f8e49e29ba7
+@riverpod
+AuthRemoteRepository authRemoteRepository(AuthRemoteRepositoryRef ref) {
+  return AuthRemoteRepository();
+}
+<<<<<<< HEAD
+
+class AuthRemoteRepositoryRef {}
+=======
+>>>>>>> 9d67ce7879a8403be177255c4a9e2f8e49e29ba7
 
 class AuthRemoteRepository {
   Future<Either<AppFailure, UserModel>> signup({
@@ -17,7 +33,7 @@ class AuthRemoteRepository {
     try {
       final response = await http.post(
         // ignore: unnecessary_brace_in_string_interps
-        Uri.parse('${ServerConstant}/auth/signup'),
+        Uri.parse('${ServerConstant.serverURl}/auth/signup'),
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({'name': name, 'email': email, 'password': password}),
       );
@@ -49,7 +65,11 @@ class AuthRemoteRepository {
       if (response.statusCode != 200) {
         return Left(AppFailure(resBodyMap['detail']));
       }
-      return Right(UserModel.fromMap(resBodyMap));
+      return Right(
+        UserModel.fromMap(
+          resBodyMap['user'],
+        ).copyWith(token: resBodyMap['token']),
+      );
     } catch (e) {
       return Left(AppFailure(e.toString()));
     }

@@ -1,19 +1,24 @@
 import 'package:client/core/theme/app_pallete.dart';
-import 'package:client/features/auth/repositories/auth_remote_repository.dart';
+// ignore: unused_import
+import 'package:client/core/utils.dart';
+import 'package:client/core/widgets/loader.dart';
+import 'package:client/features/auth/view/viewmodel/auth_viewmodel.dart'
+    show authViewModelProvider;
 import 'package:client/features/auth/view/widgets/auth_gradient_button.dart';
 import 'package:client/features/auth/view/widgets/custom_field.dart';
+import 'package:client/features/auth/viewmodel/auth_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:client/features/auth/view/pages/login_page.dart';
-import 'package:fpdart/fpdart.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class SignupPage extends StatefulWidget {
+class SignupPage extends ConsumerStatefulWidget {
   const SignupPage({super.key});
 
   @override
-  State<SignupPage> createState() => _SignupPageState();
+  ConsumerState<SignupPage> createState() => _SignupPageState();
 }
 
-class _SignupPageState extends State<SignupPage> {
+class _SignupPageState extends ConsumerState<SignupPage> {
   final nameController = TextEditingController();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
@@ -25,10 +30,33 @@ class _SignupPageState extends State<SignupPage> {
     emailController.dispose();
     passwordController.dispose();
     super.dispose();
-    formKey.currentState!.validate();
   }
 
+  @override
   Widget build(BuildContext context) {
+    ref.listen(
+      authViewModelProvider,
+      (prev, next) {
+        next?.when(
+          data: (data) {
+            showSnackBar(context, 'Account created successfully');
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const LoginPage(),
+                ));
+          },
+          error: (error, st) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text(error.toString())),
+            );
+          },
+          loading: () {
+            return const Loader();
+          },
+        );
+      },
+    );
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
@@ -48,7 +76,6 @@ class _SignupPageState extends State<SignupPage> {
                 controller: nameController,
                 isObscureText: false,
               ),
-
               const SizedBox(height: 15),
               CustomField(
                 hintText: 'Email',
@@ -62,28 +89,46 @@ class _SignupPageState extends State<SignupPage> {
                 isObscureText: true,
               ),
               const SizedBox(height: 20),
+<<<<<<< HEAD
+              Consumer(
+                builder: (context, ref, _) => AuthGradientButton(
+                  buttonText: 'Sign Up',
+                  onTap: () async {
+                    if (formKey.currentState!.validate()) {
+                      await ref.read(authViewModelProvider.notifier).signUpUser(
+                            name: nameController.text,
+                            email: emailController.text,
+                            password: passwordController.text,
+                          );
+                    }
+                  },
+                ),
+=======
               AuthGradientButton(
                 buttonText: 'Sign Up',
                 onTap: () async {
-                  final res = await AuthRemoteRepository().signup(
-                    name: nameController.text,
-                    email: emailController.text,
-                    password: passwordController.text,
-                  );
+                  if (formKey.currentState!.validate()) {
+                    await ref
+                        .read(authViewModelProvider.notifier)
+                        .signUpUser(
+                          name: nameController.text,
+                          email: emailController.text,
+                          password: passwordController.text,
+                        );
+                  }
 
-                  final val = switch (res) {
-                    Left(value: final l) => l,
-                    Right(value: final r) => r.name,
-                  };
                   // ignore: avoid_print
-                  print(val);
                 },
+>>>>>>> 9d67ce7879a8403be177255c4a9e2f8e49e29ba7
               ),
+              const SizedBox(height: 20),
               GestureDetector(
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const LoginPage()),
+                    MaterialPageRoute(
+                      builder: (context) => const LoginPage(),
+                    ),
                   );
                 },
                 child: RichText(
