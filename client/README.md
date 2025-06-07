@@ -1,4 +1,4 @@
-                                      -BÁO CÁO ĐỒ ÁN CUỐI KỲ-
+ ## BÁO CÁO ĐỒ ÁN CUỐI KỲ
 Đề tài: Xây dựng ứng dụng nghe nhạc Spotify Clone
     -Thành viên : 1
         Họ và tên: Lê Đức Vũ
@@ -26,7 +26,7 @@ Frontend (Flutter)
 
     - Flutter 3.19.5: Framework đa nền tảng (mobile, web, desktop)
 
-    - Riverpod 2.x: Quản lý trạng thái và ViewModel
+    - Riverpod 2.5: Quản lý trạng thái và ViewModel
 
     - Dio: Gửi request đến API
 
