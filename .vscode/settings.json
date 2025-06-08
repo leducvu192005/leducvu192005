@@ -1,3 +1,4 @@
 {
-    "cmake.sourceDirectory": "C:/Users/LE VU/Desktop/spotifyclone/client/windows"
+    "cmake.sourceDirectory": "C:/Users/LE VU/Desktop/spotifyclone/client/windows",
+    "java.configuration.updateBuildConfiguration": "interactive"
 }
