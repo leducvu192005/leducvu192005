@@ -1,194 +1,273 @@
-## BÁO CÁO DỰ ÁN SPOTIFY CLONECLONE
-Đề tài: Xây dựng ứng dụng nghe nhạc Spotify Clone.
+# 🎧 BÁO CÁO DỰ ÁN: SPOTIFY CLONE
 
-    -Thành viên 1 :
+## 📌 Đề tài: Xây dựng ứng dụng nghe nhạc Spotify Clone
 
-        Họ và tên: Lê Đức Vũ
+##  👨‍💻 NHÓM THỰC HÀNH : NHÓM 9
 
-        MSSV: 23010608@st.phenikaa-uni.edu.vn
+## 🎓 GV : Trương Anh Hoàng 
 
-    -Thành viên 2 :
+### 👥 Thành viên nhóm
 
-        Họ và tên: Đô Bảo Long
+- **👨‍💻 Thành viên 1:**  
+  - Họ và tên: Lê Đức Vũ  
+  - MSSV: `23010608@st.phenikaa-uni.edu.vn`
 
-        MSSV: 23010561@st.phenikaa-uni.edu.vn
+- **👨‍💻 Thành viên 2:**  
+  - Họ và tên: Đô Bảo Long  
+  - MSSV: `23010561@st.phenikaa-uni.edu.vn`
 
-I. Mục tiêu và lý do chọn đề tài.
+---
 
-    -Ngày nay, các nền tảng phát nhạc trực tuyến đóng vai trò quan trọng trong đời sống giải trí số, trong đó nổi bật là Spotify. Việc xây dựng một ứng dụng Spotify Clone giúp em vừa tiếp cận thực tế về kiến trúc và tính năng của các hệ thống hiện đại, vừa rèn luyện kỹ năng lập trình từ frontend (giao diện người dùng) đến backend (API, xử lý dữ liệu).
-    Kiến trúc MVVM: Áp dụng mô hình Model-View-ViewModel để tách biệt rõ ràng giữa giao diện và logic, tăng tính bảo trì và mở rộng.
+## 📚 MỤC LỤC
 
-    -Công nghệ Frontend: Sử dụng Flutter kết hợp Riverpod để quản lý trạng thái và logic ứng dụng hiệu quả.
+- [🎯 I. Mục tiêu và lý do chọn đề tài](#🎯-i-mục-tiêu-và-lý-do-chọn-đề-tài)
+- [🧰 II. Công nghệ sử dụng](#🧰-ii-công-nghệ-sử-dụng)
+- [🏗️ III. Thiết kế hệ thống](#🏗️-iii-kiến-trúc-hệ-thống)
+- [✅ IV. Tính năng chính đã triển khai](#✅-iv-tính-năng-chính-đã-triển-khai)
+- [🧪 V. Kết quả đạt được](#🧪-v-kết-quả-đạt-được)
+- [⚠️ VI. Hạn chế & Hướng phát triển](#⚠️-vi-hạn-chế--hướng-phát-triển)
+- [📚 VII. Tài liệu tham khảo](#📚-vii-tài-liệu-tham-khảo)
+- [📝 VIII. Tổng kết](#📝-viii-tổng-kết)
 
-    -Công nghệ Backend: Phát triển API bằng FastAPI, đảm bảo hiệu suất cao, hỗ trợ xác thực bảo mật và xử lý dữ liệu âm nhạc.
+---
 
-    -Tính năng chính: Đăng nhập bảo mật bằng JWT, phát nhạc trực tuyến qua streaming, quản lý playlist, upload file MP3.
+## 🎯 I. Mục tiêu và lý do chọn đề tài
 
+- Ngày nay, các nền tảng phát nhạc trực tuyến đóng vai trò quan trọng trong đời sống giải trí số, đặc biệt là Spotify.  
+  Việc xây dựng ứng dụng Spotify Clone giúp chúng em:
+  - Tiếp cận thực tế kiến trúc và tính năng của hệ thống hiện đại
+  - Rèn luyện kỹ năng lập trình **frontend** và **backend**
+  - Hiểu rõ mô hình kiến trúc **MVVM**
 
-Mục tiêu đề tài:
+- ⚙️ **Kiến trúc MVVM**:  
+  Giúp tách biệt rõ ràng giữa giao diện và logic, tăng tính bảo trì và mở rộng.
 
-    -Thiết kế giao diện người dùng đẹp, trực quan, mô phỏng Spotify.
+- 🧩 **Frontend**:  
+  - Dùng **Flutter** kết hợp **Riverpod** để quản lý trạng thái và logic ứng dụng.
 
-    -Xây dựng kiến trúc MVVM (Model – View – ViewModel) để tách biệt logic và UI.
+- 🛠 **Backend**:  
+  - Dùng **FastAPI** để xây dựng RESTful API hiệu suất cao, hỗ trợ xác thực và streaming nhạc.
 
-    -Sử dụng Flutter và Riverpod cho ứng dụng mobile.
+- 🔑 **Tính năng chính**:
+  - Đăng nhập bảo mật bằng JWT
+  - Phát nhạc trực tuyến
+  - Quản lý playlist cá nhân
+  - Upload và phát file MP3
 
-    -Xây dựng API backend bằng FastAPI để xử lý người dùng, bài hát, playlist,...
+---
 
-    -Áp dụng các kỹ thuật: đăng nhập bằng JWT, phát nhạc (audio streaming), upload file MP3, lưu playlist,...
+## 🎯 Mục tiêu đề tài
 
-II. Công nghệ sử dụng
-    - Frontend (Flutter)
+- 🎨 Thiết kế giao diện người dùng đẹp, trực quan (UI mô phỏng Spotify)
+- 🧱 Xây dựng kiến trúc MVVM
+- 📱 Sử dụng Flutter + Riverpod cho frontend mobile
+- 🔙 Xây dựng API backend bằng FastAPI
+- 🔒 Áp dụng JWT, phát nhạc (streaming), upload MP3, playlist,...
 
-        + Flutter 3.19.5: Framework đa nền tảng (mobile, web, desktop)
+---
 
-        + Riverpod 2.5: Quản lý trạng thái và ViewModel
+## 🧰 II. Công nghệ sử dụng
 
-        + Dio: Gửi request đến API
+### 📲 Frontend - *Flutter*
+- ⚙️ `Flutter 3.19.5`: Framework đa nền tảng
+- 🧠 `Riverpod 2.5`: Quản lý trạng thái
+- 🌐 `Dio`: Gửi request HTTP
+- 🔀 `GoRouter`: Điều hướng
+- 🎵 `AudioPlayers`: Phát nhạc
+- 🖼 `CachedNetworkImage`: Tối ưu ảnh
 
-        + GoRouter: Điều hướng màn hình
+### 🖥️ Backend - *FastAPI*
+- ⚡ `FastAPI`: Framework tốc độ cao
+- 🧪 `Pydantic`: Kiểm tra dữ liệu đầu vào
+- 🗃️ `SQLAlchemy`: ORM cho DB
+- 🧱 `SQLite`: Cơ sở dữ liệu nhẹ
+- 🔐 `JWT`: Đăng nhập và bảo mật
 
-        + AudioPlayers: Phát nhạc mp3 trực tuyến
+---
 
-        + CachedNetworkImage: Tối ưu ảnh đại diện, bìa album
+## 🏗️ III.Thiết kế hệ thống
 
-    - Backend (Python - FastAPI)
+### 1. Tổng quan thiết kế
 
-        + FastAPI: Framework web tốc độ cao, hỗ trợ async
+- Hệ thống được xây dựng theo kiến trúc **Client-Server**, trong đó:
+  - **Frontend** (Flutter) gửi yêu cầu và nhận dữ liệu từ **Backend** (FastAPI) thông qua RESTful API.
+  - Mô hình **MVVM** được áp dụng ở frontend để tách biệt rõ ràng giữa giao diện (View), logic xử lý dữ liệu (ViewModel) và dữ liệu (Model).
+  - Backend chịu trách nhiệm xử lý xác thực, quản lý dữ liệu người dùng, bài hát, playlist và streaming nhạc.
 
-        + Pydantic: Kiểm tra dữ liệu đầu vào (validation)
+### 2. Thiết kế cơ sở dữ liệu
 
-        + SQLAlchemy: ORM để thao tác CSDL
+- Sử dụng **SQLite** làm cơ sở dữ liệu nhẹ, thuận tiện cho phát triển và thử nghiệm.
+- Các bảng chính:
+  - **User**: lưu thông tin người dùng như id, email, mật khẩu đã mã hóa, tên...
+  - **Song**: lưu thông tin bài hát như id, tên bài hát, tác giả, đường dẫn file nhạc...
+  - **Playlist**: chứa thông tin playlist như id, tên playlist, người tạo playlist...
+  - **PlaylistSong**: bảng trung gian quản lý quan hệ nhiều-nhiều giữa Playlist và Song.
 
-        + SQLite: CSDL nhẹ dùng cho bản thử nghiệm
+### 3. Mô hình dữ liệu (ER Diagram)
+- Một người dùng có thể tạo nhiều playlist.
+- Một playlist có thể chứa nhiều bài hát.
+- Một bài hát có thể nằm trong nhiều playlist.
 
-        + JWT (JSON Web Token): Đăng nhập và bảo mật
+### 4. Thiết kế API
 
-III. Kiến trúc hệ thống
-Dự án tuân theo mô hình Client-Server với sự phân tách rõ ràng giữa frontend và backend. Giao tiếp giữa hai phía thông qua các API RESTful. Dữ liệu được truyền bằng JSON.
+| Endpoint          | Phương thức  | Mục đích                         | Yêu cầu xác thực JWT |
+|-------------------|--------------|---------------------------------|---------------------|
+| `/auth/register`  | POST         | Đăng ký tài khoản                | Không               |
+| `/auth/login`     | POST         | Đăng nhập, trả về JWT token     | Không               |
+| `/songs`          | GET          | Lấy danh sách bài hát           | Có                  |
+| `/songs/{id}`     | GET          | Lấy chi tiết bài hát            | Có                  |
+| `/playlists`      | GET / POST   | Lấy danh sách hoặc tạo playlist | Có                  |
+| `/playlists/{id}` | GET / PUT / DELETE | Quản lý playlist            | Có                  |
+| `/upload`         | POST         | Upload file nhạc mới            | Có                  |
+| `/stream/{id}`    | GET          | Streaming bài hát               | Có                  |
 
-    -Frontend (ứng dụng Flutter) hoạt động theo kiến trúc MVVM:
+### 5. Quy trình xử lý đăng nhập (Authentication Flow)
 
-        + Model: Các lớp dữ liệu, định nghĩa bài hát, người dùng,...
+1. Người dùng gửi thông tin đăng nhập (email và mật khẩu).
+2. Backend xác thực thông tin và tạo JWT token nếu hợp lệ.
+3. Token được trả về client, lưu giữ để sử dụng trong các request sau.
+4. Backend kiểm tra token JWT ở các API yêu cầu xác thực trước khi cho phép truy cập.
 
-        + ViewModel: Điều phối dữ liệu giữa model và view, xử lý logic, gọi API
+### 6. Streaming nhạc
 
-        + View: Giao diện người dùng (UI), phản hồi theo thay đổi từ ViewModel
+- Backend sử dụng `StreamingResponse` của FastAPI để gửi dữ liệu âm thanh dạng luồng.
+- Frontend nhận dữ liệu stream và phát nhạc trực tiếp, hỗ trợ các thao tác tua, dừng/phát bài hát.
 
-    - Backend chia thành các phần:
+---
 
-        + api/: Router định nghĩa các endpoint
+## ✅ IV. Tính năng chính đã triển khai
 
-        + auth/: Đăng nhập, đăng ký, xác thực JWT
+### 🔐 1. Đăng ký & Đăng nhập (JWT Authentication)
 
-        + db/: Các models (User, Song, Playlist)
+- Người dùng tạo tài khoản, đăng nhập.
+- Hệ thống cấp JWT token lưu ở localStorage/client để gửi kèm mỗi lần request.
+- Backend xác thực token, cho phép truy cập tài nguyên cá nhân (playlist, upload,...).
 
-        + core/: Cấu hình, tiện ích
+**Ảnh minh họa:**  
+<img src="./images/sign_in.jpg" alt="Đăng nhập người dùng" width="300" />
 
-        + main.py: Điểm khởi chạy chính với Uvicorn
+---
 
-IV. Các tính năng đã hoàn thành
-    1. Đăng ký & Đăng nhập
-    
-        - Hệ thống đăng ký, đăng nhập là cánh cổng chính để người dùng truy cập các tính năng nâng cao như tạo playlist, phát nhạc cá nhân hóa,... Vì vậy, chúng em triển khai cơ chế xác thực JWT (JSON Web Token) để đảm bảo tính bảo mật.
+### 🎧 2. Trình phát nhạc (Streaming MP3)
 
-        - Khi người dùng đăng nhập thành công, server tạo một token chứa thông tin định danh và thời gian hết hạn.
+- Giao diện phát nhạc giống Spotify.
+- Streaming từ API backend (phản hồi qua `StreamingResponse`)
+- Có thể tua, dừng/phát, chuyển bài.
 
-        - Token này được lưu ở phía client và kèm theo trong các request tiếp theo.
+**Ảnh minh họa:**  
+![Trình phát nhạc](./images/phatnhac.jpg)
 
-        - API phía server kiểm tra token trước khi cho phép truy cập vào các route yêu cầu xác thực.
+---
 
-        - Bằng cách sử dụng JWT thay vì lưu phiên đăng nhập ở server, hệ thống sẽ mở rộng tốt hơn, ít tốn tài nguyên hơn và dễ tích hợp với các dịch vụ khác như Firebase, OAuth trong tương lai.
+### 🔍 3. Tìm kiếm và danh sách bài hát
 
-    2. Trình phát nhạc (Player)
+- Danh sách bài hát hiển thị dưới dạng scrollable grid.
+- Cho phép tìm kiếm theo tên bài hát.
 
-        - Tính năng cốt lõi của ứng dụng là trình phát nhạc. Chúng em sử dụng plugin AudioPlayers để phát nhạc từ URL (được cung cấp bởi backend thông qua streaming).
+**Ảnh minh họa:**  
+![Danh sách bài hát](./images/timkiem.jpg)
 
-        - Quy trình phát nhạc:
+---
 
-        - Flutter gửi request đến API /stream/{song_id}
+### 📂 4. Playlist cá nhân
 
-        - Backend đọc file .mp3 và trả về response dạng StreamingResponse
+- Người dùng tạo nhiều playlist.
+- Thêm/xóa bài hát vào playlist.
+- Dữ liệu playlist gắn với tài khoản người dùng trong CSDL.
 
-        - Flutter nhận và phát audio bằng player, hỗ trợ:
+**Ảnh minh họa:**  
+![Playlist](./images/playlist.jpg)
 
-        - Phát / Dừng
+### 📑 5. Sơ đồ chức năng quản lí trang chính:
+![Biểu Đồ](./images/bieudo.png)
 
-        - Tua (seek)
+### 📈 6. Sơ đồ quản lí tài khoản:
+![tai khoan](./images/taikhoan.png)
 
-        - Chuyển bài trước / sau
+---
 
-        - Cập nhật tiến trình phát và thời lượng nhạc
+## 🧪 V. Kết quả đạt được
 
-        - Ngoài ra, player có trạng thái động: khi người dùng chuyển sang màn hình khác hoặc thoát tạm thời, nhạc vẫn tiếp tục phát.
+- ✅ Giao diện mô phỏng Spotify (UI đẹp, responsive)
+- ✅ Backend phản hồi nhanh, dùng JWT bảo mật
+- ✅ Chức năng phát nhạc, quản lý playlist ổn định
+- ✅ Swagger UI demo API
 
-    3. Danh sách bài hát & tìm kiếm
-        - Hiển thị danh sách các bài hát trong hệ thống
+📷 **Một số giao diện**:
+- Trang Home
+- Player
+- Playlist cá nhân
 
-        - Người dùng có thể tìm kiếm theo tên bài hát
+---
 
-    4. Playlist cá nhân
-        - Hệ thống playlist được thiết kế để cá nhân hóa trải nghiệm người dùng.
+## ⚠️ VI. Hạn chế & Hướng phát triển
 
-        - Người dùng có thể tạo nhiều playlist khác nhau.
+### ❌ Hạn chế:
+- Chưa có tính năng nghe offline
+- Chưa hỗ trợ bình luận, chia sẻ
+- Bảo mật JWT chưa có refresh token, rate limiting
 
-        - Có thể thêm hoặc xóa bài hát bất kỳ trong mỗi playlist.
+### 🚀 Hướng phát triển:
+- Tích hợp Firebase (auth + storage)
+- Tính năng like, comment, gợi ý nhạc
+- Phát nhạc nền (background playback)
+- Hỗ trợ Web/Desktop với Flutter
 
-        - Giao diện cập nhật động theo hành vi thêm / xóa.
+---
 
-        - Dữ liệu playlist được lưu vào cơ sở dữ liệu backend thông qua bảng Playlist, liên kết với bảng User và Song.
+## 🧾 VII. Kết luận
 
-        - Mỗi hành động thêm bài hát vào playlist đều thực hiện xác thực JWT để đảm bảo rằng chỉ người dùng đó mới có quyền thay đổi playlist của mình.
+Đề tài **Spotify Clone bằng Flutter + FastAPI** giúp nhóm em:
+- Nắm chắc quy trình xây dựng hệ thống full-stack
+- Hiểu rõ các công nghệ như JWT, REST API, MVVM
+- Có khả năng mở rộng thành app thực tế
 
-    5. Upload và streaming bài hát
-        - Admin có thể upload file mp3 lên server, backend hỗ trợ phát trực tiếp thông qua streaming API.
+Xin chân thành cảm ơn thầy/cô đã hướng dẫn, góp ý để nhóm hoàn thành đồ án này.
 
-V. Kết quả đạt được
-Xây dựng thành công giao diện mô phỏng Spotify (dùng Flutter)
+---
+## 📝 VIII. Tổng kết
 
-    - Backend ổn định, phản hồi nhanh, hỗ trợ xác thực JWT
+Qua quá trình thực hiện dự án, nhóm đã hoàn thành các mục tiêu đề ra, bao gồm thiết kế giao diện, xây dựng backend, phát triển tính năng streaming và quản lý playlist. Dự án giúp nhóm nâng cao kỹ năng lập trình đa nền tảng, hiểu sâu về kiến trúc MVVM và bảo mật JWT. Tuy còn một số hạn chế, nhóm sẽ tiếp tục hoàn thiện và mở rộng trong tương lai.
 
-    - Có thể đăng nhập, phát nhạc, quản lý playlist cá nhân
+Xin chân thành cảm ơn thầy cô và các bạn đã hỗ trợ nhóm trong suốt quá trình thực hiện đề tài.
 
-    - Giao diện thân thiện, responsive tốt với nhiều thiết bị:
+## 📚 Tài liệu tham khảo
+- [Flutter.dev](https://flutter.dev)
+- [FastAPI Docs](https://fastapi.tiangolo.com)
+- [Riverpod.dev](https://riverpod.dev)
+- [AudioPlayers Plugin](https://pub.dev/packages/audioplayers)
+- [YouTube Tutorial](https://www.youtube.com/watch?v=9gpAtzQhYkY&t=17418s)
+## 🚀 Cách chạy dự án Flutter
 
-    - Giao diện Home
+### 1. Clone và cài đặt 📥
 
-    - Trình phát nhạc
+```bash
+Clone:
+git clone https://github.com/leducvu192005/leducvu192005.git
+cd leducvu192005
+```
+```bash
+Cài đặt:
+flutter run
+```
 
-    - Giao diện Playlist
+### 2. Push on Github:
 
-    - API mẫu trong Swagger UI
-
-VI. Hạn chế và hướng phát triển
-    - Hạn chế:
-        + Chưa hỗ trợ nghe offline
-
-        + Chưa có hệ thống bình luận, chia sẻ bài hát
-
-        + Bảo mật chưa áp dụng nâng cao (chưa có refresh token, giới hạn rate...)
-
-    - Hướng phát triển:
-        + Tích hợp Firebase cho lưu trữ và xác thực
-
-        + Thêm tính năng like, comment, đề xuất nhạc
-
-        + Tối ưu player chạy nền (background playback)
-
-        + Hỗ trợ nền tảng Web/Desktop từ cùng một codebase Flutter
-
-VII. Kết luận
-    Đề tài "Spotify Clone sử dụng Flutter và FastAPI" đã giúp em củng cố kiến thức lập trình cả frontend và backend, hiểu sâu hơn về cách xây dựng hệ thống có kiến trúc rõ ràng và quản lý dữ liệu hiệu quả. Dự án có tiềm năng mở rộng thành một ứng dụng thực tế với các tính năng nâng cao hơn.
-
-    Em xin cảm ơn thầy/cô đã hướng dẫn, góp ý trong quá trình thực hiện đồ án này.
-
-    - Tài liệu tham khảo
-        + Flutter.dev
-
-        + FastAPI Docs
-
-        + Riverpod.dev
-
-        + AudioPlayers plugin
-
-        + YouTube:https://www.youtube.com/watch?v=9gpAtzQhYkY&t=17418s
+```bash
+git init 
+```
+```bash
+git pull origin main
+```
+```bash
+git status
+```
+```bash
+git add .
+```
+```bash
+git commit -m "Tên commit"
+```
+```bash
+git push origin main
+```
