@@ -1,13 +1,14 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-DATABASE_URL = 'postgresql://postgres:ldv@localhost:5432/flutterspotifyapp'
+
+DATABASE_URL = 'postgresql://postgres:test1234@localhost:5432/fluttermusicapp'
+
 engine = create_engine(DATABASE_URL)
-SessinLocal = sessionmaker(autoflush=False,bind=engine)
+SessionLocal = sessionmaker(autocommit = False, autoflush=False, bind=engine)
 
 def get_db():
-    db = SessinLocal()
+    db = SessionLocal()
     try:
         yield db
     finally:
         db.close()
-
