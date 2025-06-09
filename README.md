@@ -10,11 +10,11 @@
 
 - **👨‍💻 Thành viên 1:**  
   - Họ và tên: Lê Đức Vũ  
-  - MSSV: `23010608@st.phenikaa-uni.edu.vn`
+  - MSSV: `23010608
 
 - **👨‍💻 Thành viên 2:**  
   - Họ và tên: Đô Bảo Long  
-  - MSSV: `23010561@st.phenikaa-uni.edu.vn`
+  - MSSV: `23010561
 
 ---
 
