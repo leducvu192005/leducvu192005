@@ -144,9 +144,8 @@
 - Backend xác thực token, cho phép truy cập tài nguyên cá nhân (playlist, upload,...).
 
 **Ảnh minh họa:**  
-<img src="./images/sign_in.jpg" alt="Đăng nhập người dùng" width="300" />
+       <img src="./images/sign_in.jpg" alt="Đăng nhập người dùng" width="300" />
 
-**Ảnh minh họa**
 ![image](https://github.com/user-attachments/assets/a89a31d0-d4d2-4531-8900-8dc1498fd639)
 
 ---
@@ -158,7 +157,7 @@
 - Có thể tua, dừng/phát, chuyển bài.
 
 **Ảnh minh họa:**  
-![Trình phát nhạc](./images/phatnhac.jpg)
+       ![Trình phát nhạc](./images/phatnhac.jpg)
 
 ---
 
