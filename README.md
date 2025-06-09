@@ -13,7 +13,7 @@
   - MSSV: 23010608
 
 - **👨‍💻 Thành viên 2:**  
-  - Họ và tên: Đô Bảo Long  
+  - Họ và tên: Đỗ Bảo Long  
   - MSSV: 23010561
 
 ---
