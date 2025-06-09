@@ -146,10 +146,10 @@
 **Ảnh minh họa:**  
 <img src="./images/sign_in.jpg" alt="Đăng nhập người dùng" width="300" />
 
----
-**Ảnh minh họa:**
+**Ảnh minh họa**
 ![image](https://github.com/user-attachments/assets/a89a31d0-d4d2-4531-8900-8dc1498fd639)
 
+---
 
 ### 🎧 2. Trình phát nhạc (Streaming MP3)
 
